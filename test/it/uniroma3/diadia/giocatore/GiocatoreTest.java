@@ -5,14 +5,27 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class GiocatoreTest {
+	
+	Giocatore giocatore;
+	Giocatore giocatore1;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp() {
+		
+		/* scenario per getCfu() */
+		giocatore=new Giocatore();
+		giocatore1=new Giocatore();
+		giocatore1.setCfu(3);
 	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testGetCfuCorretti() {
+		assertEquals(20, giocatore.getCfu());
+	}
+	
+	@Test
+	void testGetCfuDopoSet() {
+		assertEquals(3, giocatore1.getCfu());
 	}
 
 }
