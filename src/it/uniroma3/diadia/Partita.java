@@ -60,8 +60,16 @@ public class Partita {
 	 * Restituisce vero se e solo se la partita e' finita
 	 * @return vero se partita finita
 	 */
+	
 	public boolean isFinita() {
 		return finita || vinta() || (giocatore.getCfu() == 0);
+	}
+	
+	public boolean giocatoreIsVivo() {
+		
+		if(this.getGiocatore().getCfu()<=0)
+			return false;
+		return true;
 	}
 
 	/**
@@ -71,5 +79,13 @@ public class Partita {
 	public void setFinita() {
 		this.finita = true;
 	}
+
+	@Override
+	public String toString() {
+		return "Partita [finita=" + finita + "]";
+	}
+	
+	
+
 
 }
